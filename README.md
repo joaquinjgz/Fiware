@@ -13,7 +13,6 @@ Created for developers who want to integrate FIWARE into their Smart Cities, IoT
 - 🧱 Create, update, delete NGSI v2 entities
 - ⚙️ Device registration via IoT Agents
 - 🗂️ Support for FIWARE service and subservice headers
-- 🔍 Contextual data querying and attribute filtering
 - 🪄 Simple object-oriented interface with built-in request handling
 
 ---

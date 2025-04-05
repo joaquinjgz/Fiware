@@ -1,5 +1,5 @@
 """
-Just your simple class for connection to FIWARE platform including IoT Agent UL, Mosquitto Broker, QuantumLeap and CrateDB.
+Just your simple library for connection to the FIWARE platform including IoT Agent UL, Mosquitto Broker, QuantumLeap and CrateDB services.
 """
 
 #Import modules

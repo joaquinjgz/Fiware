@@ -95,10 +95,10 @@ client.update_entity_attrs(entity)
 When creating a `FiwareFlow` client, you can provide:
 
 - `host`: The address of your Context Broker (e.g., `192.168.0.230`)
-- `OCB_port`: *(optional)* Port of the orion context broker service (default: 1026)
-- `fiware_service`: *(optional)* The FIWARE service name (default: 'test')
-- `fiware_service_path`: The subservice path (default: '/')
-- `timeout`: *(optional)* Timeout for communications in seconds (default: 10)
+- `OCB_port`: *(optional)* Port of the orion context broker service (default: `1026`)
+- `fiware_service`: *(optional)* The FIWARE service name (default: `test`)
+- `fiware_service_path`: The subservice path (default: `/`)
+- `timeout`: *(optional)* Timeout for communications in seconds (default: `10`)
 
 ---
 

@@ -14,7 +14,7 @@ class fiwareClient():
         """
         Class constructor.
             Args:
-                host (str):                 Fiware server address (e.g.: '192.168.0.164').
+                host (str):                 Fiware server address (e.g., '192.168.0.164').
                 OCB_port (int):             Port of the orion context broker service.
                 fiware_service (str):       Header defined so that entities for a given service can be held in a separate mongoDB database.
                 fiware_service_path (str):  Path used to differentiate between arrays of devices.       
@@ -140,11 +140,11 @@ class fiwareClient():
             print(e)
             return ["0"]
         
-    def delete_entity(self, entity_name):
+    def delete_entity(self, entity_id):
         """
         This method deletes an entity in a certain fiware_service and fiware_service_path.
             Args:
-                entity_name (str): Id of the entity to be deleted.
+                entity_id (str): Id of the entity to be deleted.
 
             Returns:
                 int: Error - 0, Success - 1.
@@ -157,7 +157,7 @@ class fiwareClient():
         #Building request
         conn = http.client.HTTPConnection(self.host,str(self.OCB_port),timeout = self.timeout)
         try:
-            conn.request("DELETE","/v2/entities/" + entity_name, headers = headers)
+            conn.request("DELETE","/v2/entities/" + entity_id, headers = headers)
             response = conn.getresponse()
             conn.close()
             if (response.status != 204):
@@ -319,7 +319,7 @@ class fiwareClient():
             Args:
                 device_id (str):      Id of the device created.
                 entity (dict):        Entity whose attributes will be modified by the created device.
-                timezone (str):       Timezone of the created device (e.g.: "Europe/Madrid").
+                timezone (str):       Timezone of the created device (e.g., "Europe/Madrid").
                 IoTAUL_port (int):    Port of the IoT Agent UL service.
             Returns:
                 int: Error - 0, Success - 1
@@ -439,7 +439,7 @@ class fiwareClient():
             Args:
                 device_id (str):    Id of the device created.
                 entity (dict):      Entity whose attributes will be modified by the created device.
-                timezone (str):     Timezone of the created device (e.g.: "Europe/Madrid").
+                timezone (str):     Timezone of the created device (e.g., "Europe/Madrid").
                 IoTAUL_port (int):  Port of the IoT Agent UL service.
             Returns:
                 int: Error - 0, Success - 1
@@ -684,7 +684,7 @@ class fiwareClient():
 
         #Delete each entity
         for entity in entities:
-            result -= self.delete_entity(entity_name = entity["id"])
+            result -= self.delete_entity(entity_id = entity["id"])
     
         #Success if and only if all entities were deleted
         if(result==0):
@@ -806,7 +806,7 @@ class fiwareClient():
 
     def get_CSV_CrateDB(self, entity_id, database, from_date, to_date, limit, to_drop=None, crateDB_port=4200):
         """
-        This method retrieves the last "limit" values of the attributes for a certain entity between dates
+        This method exports to a .csv file the last "limit" values of the attributes for a certain entity between dates
             Args:
                 entity_id (str):        Id of the entity to be retrieved, '' to retrieve values of all entities.
                 database (str):         Name of the crate database that holds the data.

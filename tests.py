@@ -1,4 +1,4 @@
-#Import fiware module
+#Import fiwareflow module
 from fiwareflow import fiwareClient
 
 client = fiwareClient(host='54.75.212.61', fiware_service='DOWN', fiware_service_path='/', timeout=10)

@@ -280,7 +280,6 @@ class fiwareClient():
             print(e)
             return ["0"]
         
-
     def delete_service(self, apikey, IoTAUL_port=4061, resource='/iot/d'):
         """
         This method deletes an active service in a certain fiware_service and fiware_service_path.
@@ -804,10 +803,11 @@ class fiwareClient():
             return ["0"]
         
 
-    def get_CSV_CrateDB(self, entity_id, database, from_date, to_date, limit, to_drop=None, crateDB_port=4200):
+    def get_CSV_CrateDB(self, path, entity_id, database, from_date, to_date, limit, to_drop=None, crateDB_port=4200):
         """
         This method exports to a .csv file the last "limit" values of the attributes for a certain entity between dates
             Args:
+                path (str):             Path to save the .csv file
                 entity_id (str):        Id of the entity to be retrieved, '' to retrieve values of all entities.
                 database (str):         Name of the crate database that holds the data.
                 from_date (str):        Beginning of the time range in ISO8601 format and GMT time (e.g.,2018-01-05T15:44:34).
@@ -837,9 +837,9 @@ class fiwareClient():
 
                 #Export to .csv
                 if(entity_id == ''):
-                    df.to_csv('all_from' + from_date.replace(':','-') + '_to' + to_date.replace(':','-') + '_of_' + database + '.csv', index = False, decimal = '.')
+                    df.to_csv(path_or_buf=path, index = False, decimal = '.')
                 else:
-                    df.to_csv(entity_id + '_from' + from_date.replace(':','-') + '_to' + to_date.replace(':','-') + '_of_' + database + '.csv', index = False, decimal = '.')
+                    df.to_csv(path_or_buf=path, index = False, decimal = '.')
 
                 return 1
             else:

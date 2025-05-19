@@ -6,6 +6,7 @@ from fiwareflow import fiwareClient
 
 # Client parameters
 host = 'xxx.xxx.xxx.xxx'
+OCB_port = 1026
 fiware_service = 'test'
 fiware_service_path = '/'
 
@@ -19,7 +20,7 @@ to_date = '2028-12-01T00:00:00'
 to_drop = ['__original_ngsi_entity__']
 
 # Instance the client
-client = fiwareClient(host, fiware_service, fiware_service_path)
+client = fiwareClient(host=host, OCB_port=OCB_port, fiware_service=fiware_service, fiware_service_path=fiware_service_path)
 
 if(client.get_CSV_CrateDB(path=path,
                           entity_id=entity_id, 

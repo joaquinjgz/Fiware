@@ -128,6 +128,13 @@ Developed by [Joaquin Garrido-Zafra](https://github.com/joaquinjgz)
 
 ---
 
+## 📖 Citation
+If you use this module, please cite it as:
+
+joaquin Garrido-Zafra, "FiwareFlow," GitHub. [Online]. Available: https://github.com/joaquinjgz/Fiware. [Accessed: May 20, 2025].
+
+---
+
 ## 🧠 What is FIWARE?
 
 [FIWARE](https://www.fiware.org/) is an open-source platform enabling the creation of smart applications across domains such as Smart Cities, Energy, Healthcare, Industry, and more. It provides a suite of reusable components known as **Generic Enablers**, with the **Context Broker** at its core — enabling real-time context data management.
